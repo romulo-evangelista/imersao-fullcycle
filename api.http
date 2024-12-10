@@ -1,0 +1,28 @@
+###
+GET http://localhost:3000/places?text=Cascavel, Ceará
+
+###
+GET http://localhost:3000/places?text=Fortaleza, Ceará
+
+###
+@originId = ChIJF6Q4tTCXuAcR4atZyooyBeE
+@destinationId = ChIJP3hMRj9MxwcRyjdrDArGYUY
+
+###
+GET http://localhost:3000/directions?originId={{ originId }}&destinationId={{ destinationId }}
+
+###
+POST http://localhost:3000/routes
+Content-Type: application/json
+
+{
+  "name": "rota 1",
+  "source_id": "{{ originId }}",
+  "destination_id": "{{ destinationId }}"
+}
+
+###
+GET http://localhost:3000/routes
+
+###
+GET http://localhost:3000/routes/6757b160efc3ea2f002694ee
